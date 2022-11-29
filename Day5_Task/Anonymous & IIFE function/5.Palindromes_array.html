@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Anonymous function
+        const check_palindrome = function() {
+    let arr = ['bhuvan', 'mom', 'tenet', 'bhuvan1'];
+    let palindrome = []
+    for (let i = 0; i < arr.length; i++) {
+        let str = arr[i];
+        let rev = str.split('').reverse().join('');
+        if (str === rev) {
+            palindrome.push(str);
+        }
+    }
+    return palindrome;
+}
+
+     console.log(check_palindrome())
+
+     //IIFE function
+     const check_palindrome1 = (function() {
+    let arr1 = ['bhuvan', 'mom', 'tenet', 'bhuvan1'];
+    let palindrome1 = []
+    for (let i = 0; i < arr1.length; i++) {
+        let str1 = arr1[i];
+        let rev1 = str1.split('').reverse().join('');
+        if (str1 === rev1) {
+            palindrome1.push(str1);
+        }
+    }
+    return palindrome1;
+})()
+
+     console.log(check_palindrome1)
+    </script>
+</body>
+</html>

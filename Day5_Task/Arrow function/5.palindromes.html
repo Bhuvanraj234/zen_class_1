@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const check_palindrome = ()=> {
+    let arr = ['bhuvan', 'mom', 'tenet', 'bhuvan1'];
+    let palindrome = []
+    for (let i = 0; i < arr.length; i++) {
+        let str = arr[i];
+        let rev = str.split('').reverse().join('');
+        if (str === rev) {
+            palindrome.push(str);
+        }
+    }
+    return palindrome;
+}
+
+     console.log(check_palindrome())
+    </script>
+</body>
+</html>
