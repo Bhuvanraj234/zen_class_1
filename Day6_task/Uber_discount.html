@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class uber{
+            constructor(kilometer){
+               this.kilometer=kilometer
+               this.price = this.kilometer*20
+            }
+            discount(){
+                var discount = this.price/4;
+                let balanceprice = this.price - discount;
+                console.log("discount :", discount)
+                console.log("balanceprice:", balanceprice)
+            }
+        }
+        var cus1 = new uber(3);
+        var cus2 = new uber(5);
+        var cus3 = new uber(1);
+        console.log(cus1)
+        cus1.discount()
+        console.log(cus2)
+        cus2.discount()
+        console.log(cus3)
+        cus3.discount()
+        
+        
+    </script>
+</body>
+</html>
