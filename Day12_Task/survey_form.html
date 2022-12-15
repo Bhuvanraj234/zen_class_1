@@ -1,0 +1,198 @@
+<!-- survey form -->
+<!doctype html>
+
+<head>
+    <title>Survey Form</title>
+</head>
+
+<body>
+    <form action="#" style="margin: auto;">
+        <div>
+            <h3 class=" required" style="margin-bottom: 5px;">Name</h3>
+        <div style="display: flex;margin-bottom: 10px;">
+            <div style="display: flex;flex-direction: column;width: 15%">
+                <input type="text" name="fname" id="fname">
+                <label for=" fname">First</label>
+            </div>
+            <div style="margin-left: 10px;display: flex;flex-direction: column;width: 15%">
+                <input type="text" name="lname" id="lname">
+                <label for=" lname">Last</label>
+            </div>
+        </div>
+        </div>
+        <div>
+            <h3 class="required" style="margin-bottom: 5px;">Email</h3>
+            <input style="width: 30%;" type="email" name="name" id="name">
+        </div>
+        <div>
+            <h3 class="required" style="margin-bottom: 5px;">Your Experience</h3>
+            <!--5 star tag -->
+            <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+            </div>
+        </div>
+        <div>
+            <label for="rate">Overall, how would you rate you experience with us?</label>
+        </div>
+        <div>
+            <h3 class="required" style="margin-bottom: 5px;">How satisfied are you with</h3>
+            <table>
+                <thead>
+                    <td style="width: 25%"></td>
+                    <td>Very Unsatisfied</td>
+                    <td>Unsatisfied</td>
+                    <td>Neutral</td>
+                    <td>Satisfied</td>
+                    <td>Very satisfied</td>
+                </thead>
+                <tbody>
+                    <tr class="t_row">
+                        <td>Purchase</td>
+                        <td><input type="radio" name="purchase" value="1"></td>
+                        <td><input type="radio" name="purchase" value="2"></td>
+                        <td><input type="radio" name="purchase" value="3"></td>
+                        <td><input type="radio" name="purchase" value="4"></td>
+                        <td><input type="radio" name="purchase" value="5"></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>Service</td>
+                        <td><input type="radio" name="service" value="1"></td>
+                        <td><input type="radio" name="service" value="2"></td>
+                        <td><input type="radio" name="service" value="3"></td>
+                        <td><input type="radio" name="service" value="4"></td>
+                        <td><input type="radio" name="service" value="5"></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>Company Overall</td>
+                        <td><input type="radio" name="company" value="1"></td>
+                        <td><input type="radio" name="company" value="2"></td>
+                        <td><input type="radio" name="company" value="3"></td>
+                        <td><input type="radio" name="company" value="4"></td>
+                        <td><input type="radio" name="company" value="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3 class="required" style="margin-bottom: 5px;">how likely are you to</h3>
+            <table>
+                <thead>
+                    <td style="width: 25%"></td>
+                    <td>Very Unlikely</td>
+                    <td>Unlikely</td>
+                    <td>Neutral</td>
+                    <td>likely</td>
+                    <td>Very likely</td>
+                </thead>
+                <tbody>
+                    <tr class="t_row">
+                        <td>Buy from us again</td>
+                        <td><input type="radio" name="buy" value="1"></td>
+                        <td><input type="radio" name="buy" value="2"></td>
+                        <td><input type="radio" name="buy" value="3"></td>
+                        <td><input type="radio" name="buy" value="4"></td>
+                        <td><input type="radio" name="buy" value="5"></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>Recommend our product to others</td>
+                        <td><input type="radio" name="recommend" value="1"></td>
+                        <td><input type="radio" name="recommend" value="2"></td>
+                        <td><input type="radio" name="recommend" value="3"></td>
+                        <td><input type="radio" name="recommend" value="4"></td>
+                        <td><input type="radio" name="recommend" value="5"></td>
+                    </tr>
+                    <tr class="t_row">
+                        <td>Recommend our company to others</td>
+                        <td><input type="radio" name="recommend_company" value="1"></td>
+                        <td><input type="radio" name="recommend_company" value="2"></td>
+                        <td><input type="radio" name="recommend_company" value="3"></td>
+                        <td><input type="radio" name="recommend_company" value="4"></td>
+                        <td><input type="radio" name="recommend_company" value="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3 style="margin-bottom: 5px;">Additional comments or suggestions</h3>
+            <textarea style="width: 50%;height: 100px;" name="comment" form="usrform"></textarea>
+        </div>
+
+        <input style="width:5%;padding: 10px;margin-top: 10px;" type="submit" value="Submit">
+    </form>
+
+    </html>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .required::after {
+            content: "*";
+            display: inline-block;
+            color: crimson
+        }
+
+
+        .rate {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
+
+        .rate:not(:checked)>input {
+            position: absolute;
+            top: -9999px;
+        }
+
+        .rate:not(:checked)>label {
+            float: right;
+            width: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
+        }
+
+        .rate:not(:checked)>label:before {
+            content: '★ ';
+        }
+
+        .rate>input:checked~label {
+            color: #ffc700;
+        }
+
+        .rate:not(:checked)>label:hover,
+        .rate:not(:checked)>label:hover~label {
+            color: #deb217;
+        }
+
+        .rate>input:checked+label:hover,
+        .rate>input:checked+label:hover~label,
+        .rate>input:checked~label:hover,
+        .rate>input:checked~label:hover~label,
+        .rate>label:hover~input:checked~label {
+            color: #c59b08;
+        }
+
+        table {
+            width: 50%;
+        }
+        tr {
+            height: 40px;
+        }
+
+        .t_row:nth-child(odd) {
+            background-color: lightgrey;
+        }
+    </style>

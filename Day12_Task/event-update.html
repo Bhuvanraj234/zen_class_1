@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <title>Event-Update-Page</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h2 style="font-family: cursive">Event 1</h2>
+            <p>Number of available seats: 23</p>
+            <div class="content">
+                <div class="content-left">
+                    <div class="image-tag">
+                        <div class="inside-image-tag">
+                            <p class="image">Image</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <form action="#">
+                        <div class="field-div">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="field-div">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="field-div">
+                            <label for="phone">Phone.:</label>
+                            <input type="text" id="phone" name="phone">
+                        </div>
+                        <div class="field-div" style="display:flex;justify-content:left;">
+                            <label for="no_of_seats">Number of Seats:</label>
+                            <select id="no_of_seats" name="no_of_seats" style="width: 20%;margin-right: 42%;">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="field-div">
+                            <label for="name_of_attendee">Name of Attendee 2:</label>
+                            <input type="text" id="name_of_attendee" name="name_of_attendee">
+                        </div>
+                        <div style="display: flex; justify-content: space-evenly;">
+                            <button type="submit" value="Submit">Submit</button>
+                            <button value="Cancel">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    .main {
+        margin-top: 40px !important;
+        width: 60%;
+        margin: auto;
+    }
+
+    .header {
+        border: black 2px solid;
+        text-align: center;
+        width: 100%;
+    }
+
+    .field-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    .content {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        display: flex;
+        border: black solid 2px;
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .content-right {
+        display: flex;
+        direction: row;
+        width: 60%;
+        justify-content: center;
+    }
+
+    .content-left {
+        width: 40%;
+        position: relative;
+    }
+
+    .image-tag {
+        border: black solid 2px;
+        width: 50%;
+        position: absolute;
+        left: 25%;
+        top: 15%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .inside-image-tag {
+        top: 15%;
+        position: absolute;
+        border: solid 2px black;
+        width: 60%;
+        height: 70%;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    .image {
+        font-family: cursive;
+        position: absolute;
+        top: 25%;
+        right: 30%;
+    }
+
+    label {
+        margin-right: 5px;
+        text-align: right;
+        width: 100%;
+    }
+
+    button {
+        font-family: cursive;
+        margin-top: 20px;
+        padding: 10px;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+</style>
