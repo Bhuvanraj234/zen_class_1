@@ -1,0 +1,121 @@
+<!-- create a html form -->
+<doctype html>
+    <html>
+
+    <head>
+        <title>Form and Table</title>
+    </head>
+
+    <style>
+        * {
+            margin: 0 auto;
+        }
+
+        form {
+            margin-top: 50px;
+            width: 50%;
+            padding: 10px;
+            border: 1px solid black;
+            text-align: left;
+        }
+
+        /* border for tables and cells */
+        table {
+            width: 80%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <body>
+        <h1 id="title"> Form</h1>
+        <p style="text-align: center" id="description">Form</p>
+        <form action="#" id="form" method="post">
+            <!-- First name -->
+            <div class="form-group">
+
+                <label for="fname">First name:</label><br>
+                <input type="text" id="first-name" name="fname" placeholder="First Name" required>
+                <br><br>
+                <!-- Last name -->
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="last-name" name="lname" placeholder="Last Name" required><br><br>
+                <!-- address -->
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address" rows="4" cols="50" placeholder="Address" required></textarea><br><br>
+                <!-- Pincode -->
+                <label for="pincode">Pincode:</label><br>
+                <input type="text" id="pincode" name="pincode" placeholder="Pincode" required><br><br>
+                <!-- Gender -->
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="Male" required> Male
+                <input type="radio" name="gender" value="Female"> Female
+                <input type="radio" name="gender" value="Other"> Other
+                <br><br>
+                <!-- food choice checkbox -->
+                <label for="food">Food:</label><br>
+                <input type="checkbox" id="food" name="food" value="Pizza">
+                <label for="food">Pizza</label><br>
+                <input type="checkbox" id="food" name="food" value="Burger">
+                <label for="food">Burger</label><br>
+                <input type="checkbox" id="food" name="food" value="Pasta">
+                <label for="food">Pasta</label><br>
+                <input type="checkbox" id="food" name="food" value="Sandwich">
+                <label for="food">Sandwich</label><br>
+                <input type="checkbox" id="food" name="food" value="Biryani">
+                <label for="food">Biryani</label><br><br>
+                <!-- state -->
+                <label for="state">State:</label><br>
+                <select id="state" name="state">
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                </select><br><br>
+                <!-- country -->
+                <label for="country">Country:</label><br>
+                <select id="country" name="country">
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                </select>
+                <!-- submit -->
+                <br><br>
+                <input type="submit" id="submit" class="btn btn-primary" value="Submit">
+
+            </div>
+        </form>
+        <!-- Create a table -->
+        <h1 style="text-align: center; margin-top: 20px;">Table</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>Gender</th>
+                    <th>Food</th>
+                    <th>State</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            </thead>
+        </table>
+    </body>
+    <script src="script1.js">
+    </script>
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+
+    </html>

@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        * {
+            margin-top: 100px;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 10px;
+            border: grey solid 1px;
+            background-color: lightgrey;
+            border-radius: 1%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .calculator input[type="text"] {
+            width: 80%;
+            height: 50px;
+            font-size: 36px;
+            border: none;
+            background-color: #f1f1f1;
+            text-align: right;
+        }
+
+        .calculator button {
+            width: 20%;
+            height: 50px;
+            border: none;
+            background-color: lightgrey;
+            cursor: pointer;
+        }
+
+        .calculator button:hover {
+            background-color: #ccc;
+        }
+
+        #result {
+            background-color: rgb(180, 178, 178);
+            width: 80%;
+        }
+
+        #clear {
+            color: red
+        }
+
+        #equal {
+            background-color: blue;
+        }
+
+        .operator {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1 id="title">Calculator</h1>
+        <p id="description">Calculator Task</p>
+    </div>
+    <div class="calculator" id="calculator">
+        <input type="text" id="result" placeholder="0" disabled>
+        <button id="clear" onclick="clearDisplay()">C</button>
+        <button id="btnbackspace" onclick="backspace()" style="font-size: 20px;">←</button>
+        <button id="btndot" onclick="addNumber('.')">.</button>
+        <button id="btnMultiply" class="operator" onclick="addOperator('*')">X</button>
+        <button id="7" onclick="addNumber(7)">7</button>
+        <button id="8" onclick="addNumber(8)">8</button>
+        <button id="9" onclick="addNumber(9)">9</button>
+        <button id="btnDivide" class="operator" onclick="addOperator('/')">/</button>
+        <button id="4" onclick="addNumber(4)">4</button>
+        <button id="5" onclick="addNumber(5)">5</button>
+        <button id="6" onclick="addNumber(6)">6</button>
+        <button id="subtract" class="operator" onclick="addOperator('-')">-</button>
+        <button id="1" onclick="addNumber(1)">1</button>
+        <button id="2" onclick="addNumber(2)">2</button>
+        <button id="3" onclick="addNumber(3)">3</button>
+        <button id="add" class="operator" onclick="addOperator('+')">+</button>
+        <button id="btn0" onclick="addNumber(0)">0</button>
+        <button id="btn0" onclick="addNumber('00')">00</button>
+        <button id="equal" style="width: 33%;" onclick="calculate()">=</button>
+    </div>
+    <script src="script.js">
+
+    </script>
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+</body>
+
+</html>
