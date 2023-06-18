@@ -1,0 +1,8 @@
+#grad{
+    text-align : center;
+    background: linear-gradient(to left, #3e5151, #decba4); 
+}
+
+.container{
+    align-content: center !important;
+}
