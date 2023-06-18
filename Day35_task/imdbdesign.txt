@@ -1,0 +1,178 @@
+-- Create Movie table
+CREATE TABLE Movie (
+  movie_id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  release_date DATE,
+  duration INT
+  -- Add other movie attributes here
+);
+
+INSERT INTO Movie (title, release_date, duration)
+VALUES ('Avatar', '2023-01-01', 120),
+       ('Tenet', '2022-07-15', 105),
+       ('Godzilla', '2023-03-10', 125);
+
+-- Create Media table
+CREATE TABLE Media (
+  media_id INT AUTO_INCREMENT PRIMARY KEY,
+  movie_id INT,
+  media_type VARCHAR(20),
+  media_url VARCHAR(255),
+  -- Add other media attributes here
+  FOREIGN KEY (movie_id) REFERENCES Movie(movie_id)
+);
+
+INSERT INTO Media (movie_id, media_type, media_url)
+VALUES (1, 'Video', 'https://youtu.be/5PSNL1qE6VY'),
+       (1, 'Image', 'https://wallpapers.com/wallpapers/avatar-neytiri-close-up-shot-vjvvrbq8dwbmn23j.html'),
+       (2, 'Video', 'https://youtu.be/L3pk_TBkihU'),
+       (2, 'Video', 'https://youtu.be/AZGcmvrTX9M'),
+       (3, 'Image', 'https://wallpapers.com/picture/godzilla-pictures-1now14ivvrobeoiv.html');
+
+-- Create Genre table
+CREATE TABLE Genre (
+  genre_id INT AUTO_INCREMENT PRIMARY KEY,
+  genre_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Genre (genre_name)
+VALUES ('Action'),
+       ('Science fiction'),
+       ('adventure'),
+       ('Action'),
+       ('Thriller'),
+       ('Suspense'),
+       ('Fantasy'),
+       ('Horror');
+       
+
+-- Create Movie_Genre table
+CREATE TABLE Movie_Genre (
+  movie_id INT,
+  genre_id INT,
+  PRIMARY KEY (movie_id, genre_id),
+  FOREIGN KEY (movie_id) REFERENCES Movie(movie_id),
+  FOREIGN KEY (genre_id) REFERENCES Genre(genre_id)
+);
+
+INSERT INTO Movie_Genre (movie_id, genre_id)
+VALUES (1, 1),
+       (1, 2),
+       (1, 3),
+       (2, 1),
+       (2, 2),
+       (2, 3),
+       (3, 1),
+       (3, 2);
+
+-- Create User table
+CREATE TABLE User (
+  user_id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL
+  -- Add other user attributes here
+);
+
+INSERT INTO User (username)
+VALUES ('Agneesh'),
+       ('Bhuvan'),
+       ('Manikandan');
+
+-- Create Review table
+CREATE TABLE Review (
+  review_id INT AUTO_INCREMENT PRIMARY KEY,
+  movie_id INT,
+  user_id INT,
+  rating INT,
+  review_text TEXT,
+  -- Add other review attributes here
+  FOREIGN KEY (movie_id) REFERENCES Movie(movie_id),
+  FOREIGN KEY (user_id) REFERENCES User(user_id)
+);
+
+INSERT INTO Review (movie_id, user_id, rating, review_text)
+VALUES (1, 1, 4, 'Great movie!'),
+       (1, 2, 5, 'One of the best movies I have seen.'),
+       (2, 3, 3, 'Mind blowing'),
+       (3, 1, 4, 'The movie is really scary'),
+       (3, 3, 3.5, 'The movie was fun');
+
+-- Create Artist table
+CREATE TABLE Artist (
+  artist_id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+  -- Add other artist attributes here
+);
+
+INSERT INTO Artist (name)
+VALUES ('Sam Worthington'),
+       ('Zoe Saldana'),
+       ('Robert Pattinson'),
+       ('John David'),
+       ('Ken Watanabe'),
+       ('Millie Bobby Brown');
+
+-- Create Skill table
+CREATE TABLE Skill (
+  skill_id INT AUTO_INCREMENT PRIMARY KEY,
+  skill_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Skill (skill_name)
+VALUES ('Acting'),
+       ('Directing'),
+       ('Writing'),
+       ('Singing'),
+       ('Dancing');
+       
+-- Create Artist_Skill table
+CREATE TABLE Artist_Skill (
+  artist_id INT,
+  skill_id INT,
+  PRIMARY KEY (artist_id, skill_id),
+  FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
+  FOREIGN KEY (skill_id) REFERENCES Skill(skill_id)
+);
+
+INSERT INTO Artist_Skill (artist_id, skill_id)
+VALUES (1, 1),
+       (1, 2),
+       (2, 1),
+       (3, 1),
+       (3, 3),
+       (4, 1),
+       (4, 4),
+       (5, 1),
+       (6, 1),
+       (6, 3);
+       
+-- Create Role table
+CREATE TABLE Role (
+  role_id INT AUTO_INCREMENT PRIMARY KEY,
+  role_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Role (role_name)
+VALUES ('Actor'),
+       ('Director'),
+       ('Writer');
+
+-- Create Artist_Role table
+CREATE TABLE Artist_Role (
+  artist_id INT,
+  movie_id INT,
+  role_id INT,
+  PRIMARY KEY (artist_id, movie_id, role_id),
+  FOREIGN KEY (artist_id) REFERENCES Artist(artist_id),
+  FOREIGN KEY (movie_id) REFERENCES Movie(movie_id),
+  FOREIGN KEY (role_id) REFERENCES Role(role_id)
+);
+
+INSERT INTO Artist_Role (artist_id, movie_id, role_id)
+VALUES (1, 1, 1),
+       (2, 2, 1),
+       (3, 2, 2),
+       (4, 3, 1),
+       (5, 3, 1),
+       (6, 3, 3);
+
+
