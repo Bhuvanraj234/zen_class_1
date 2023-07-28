@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Uber Class</title>
+</head>
+<body>
+    <h1>Uber Class</h1>
+    <script>
+        class UberPriceCalculator {
+            constructor(baseFare, ratePerKilometer, ratePerMinute) {
+            this.baseFare = baseFare;
+            this.ratePerKilometer = ratePerKilometer;
+            this.ratePerMinute = ratePerMinute;
+    }
+  
+        calculatePrice(distanceInKm, timeInMinutes) {
+      const distancePrice = this.ratePerKilometer * distanceInKm;
+      const timePrice = this.ratePerMinute * timeInMinutes;
+      const totalPrice = this.baseFare + distancePrice + timePrice;
+      return totalPrice;
+    }
+  }
+  
+  const calculator = new UberPriceCalculator(5, 2, 0.5); // Base fare: $5, Rate per kilometer: $2, Rate per minute: $0.5
+  const distanceTraveled = 10; // 10 kilometers
+  const timeTaken = 20; // 20 minutes
+  
+  const price = calculator.calculatePrice(distanceTraveled, timeTaken);
+  console.log(`The total Uber price is ${price.toFixed(2)} Rupees.`);
+  
+    </script>
+</body>
+</html>
+
+  

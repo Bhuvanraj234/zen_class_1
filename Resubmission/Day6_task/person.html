@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Person Details Class</title>
+</head>
+<body>
+    <h1>Person Details Class</h1>
+    <script>
+        class Person {
+          constructor(firstName, lastName, age, gender, email) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.gender = gender;
+            this.email = email;
+          }
+
+          getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+          }
+
+          getDetails() {
+            return {
+              firstName: this.firstName,
+              lastName: this.lastName,
+              age: this.age,
+              gender: this.gender,
+              email: this.email,
+            };
+          }
+
+          updateAge(newAge) {
+            this.age = newAge;
+          }
+        }
+
+        const bhuvan = new Person('Bhuvanraj', 'Somasundaram', 23, 'Male', 'bhuvanrajsomasundaram@gmail.com');
+        const  allen = new Person('Allen', 'Stanley', 21, 'Male', 'allenstanley@gmail.com');
+        const siddharth = new Person('Siddharth', 'Ram', 21, 'Male', 'ramsiddharth@gmail.com');
+        const kevin = new Person('Kevin', 'Debruyne', 32, 'Male', 'kdb234@gmail.com');
+
+        console.log(bhuvan.getFullName()); 
+        console.log(allen.getFullName()); 
+        console.log(siddharth.getFullName()); 
+        console.log(kevin.getFullName()); 
+
+        console.log(bhuvan.getDetails());
+        console.log(allen.getDetails()); 
+        console.log(siddharth.getDetails()); 
+        console.log(kevin.getDetails());  
+
+        bhuvan.updateAge(24);
+        console.log(bhuvan.getDetails()); 
+        kevin.updateAge(34);
+        console.log(kevin.getDetails()); 
+
+
+    </script>
+</body>
+</html>
